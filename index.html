@@ -11,7 +11,7 @@
 <body>
 	<div id="root">
 		<div class="slider">
-			<div @mouseenter="clear" class="slide">
+			<div @mouseenter="clear" @mouseleave="time" class="slide">
 				<img :src="'img/' + arrSlides[activeIndex].media" :alt="arrSlides[activeIndex].title">
 				<div class="slide-contents">
 					<h2 class="slide-title">{{ arrSlides[activeIndex].title }}</h2>
@@ -19,7 +19,7 @@
 				</div>
 			</div>
 
-			<div class="thumbs">
+			<div @mouseenter="clear" @mouseleave="time" class="thumbs">
 				<div @click="activeIndex = index" v-for="(thumb, index) in arrSlides" class="thumb" :class="index == activeIndex ? 'active' : ''">
 					<img :src="'img/' + thumb.media" :alt="thumb.title">
 				</div>

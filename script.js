@@ -47,10 +47,10 @@ const app =  new Vue({
             }
         },
         time(){
-                setInterval(this.next, 3000)
+                intervall = setInterval(this.next, 3000)
         },
         clear(){
-            clearInterval(this.created)
+            clearInterval(intervall)
         }
     },
     created(){
